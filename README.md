@@ -34,7 +34,7 @@ Fear not, teav2 (this time really version 2, since the old library sucks) is her
 ## Documentation
 Yes! Not now though; this readme is already way more than I normally write.
 
-Try `cargo run -- -h` though.
+Try `teav2 -h` though.
 
 ## Contributing
 Found a bug? Got a feature you want added? Fix it yourself and open a pull request! Or at least open an issue.

@@ -4,8 +4,8 @@ project(teav2 VERSION 0.0.0 LANGUAGES CXX)
 
 add_subdirectory(td)
 
-include_directories(include)
-file(GLOB SOURCES "src/*.cpp")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 
 add_executable(teav2 ${SOURCES})
 

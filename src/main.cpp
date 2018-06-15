@@ -1,18 +1,16 @@
-#include <docopt/docopt.h>
+#include "docopt/docopt.h"
 
 #include <iostream>
 
-#define VERSION_STRING "1.0"
-
 static const char USAGE[] =
-R"(Usage:
+R"(teav2
+Usage:
     teav2 send RECIPIENT (-m | -f) OBJECT
     teav2 [OPTIONS]
 
 Options:
     -h --help         Show this screen
     -v --version      Show version
-    -i --interactive  Start in interactive mode
 )";
 
 int main(int argc, char *argv[]) {
@@ -20,6 +18,6 @@ int main(int argc, char *argv[]) {
         USAGE,
         { argv + 1, argv + argc },
         true,
-        "teav2 v" VERSION_STRING
+        "teav2 v0.0"
     );
 }

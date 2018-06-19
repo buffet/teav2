@@ -11,10 +11,7 @@
 
 #include <cstdint>
 #include <functional>
-#include <iostream>
-#include <limits>
 #include <map>
-#include <sstream>
 #include <string>
 #include <vector>
 
@@ -27,9 +24,9 @@ namespace teav2 {
 
 	class Client {
 	public:
-		Client();
+		Client(void);
 
-		void loop();
+		void loop(void);
 
 	private:
 		using Object = td_api::object_ptr<td_api::Object>;
@@ -47,7 +44,7 @@ namespace teav2 {
 
 		std::map<std::int64_t, std::string> chat_title_;
 
-		void restart();
+		void restart(void);
 
 		void send_query(td_api::object_ptr<td_api::Function> f, std::function<void(Object)> handler);
 
@@ -59,10 +56,10 @@ namespace teav2 {
 
 		std::function<void(Object)> create_authentication_query_handler();
 
-		void on_authorization_state_update(); 
+		void on_authorization_state_update(void); 
 
 		void check_authentication_error(Object object);
 
-		std::uint64_t next_query_id();
+		std::uint64_t next_query_id(void);
 	};
 }

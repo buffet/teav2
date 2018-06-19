@@ -54,12 +54,12 @@ auto overloaded(F... f) {
 namespace td_api = td::td_api;
 
 namespace teav2 {
-	Client::Client() {
+	Client::Client(void) {
 		td::Log::set_verbosity_level(1);
 		client_ = std::make_unique<td::Client>();
 	}
 
-	void Client::loop() {
+	void Client::loop(void) {
 		while (true) {
 			if (need_restart_) {
 				restart();
@@ -127,7 +127,7 @@ namespace teav2 {
 
 	using Object = td_api::object_ptr<td_api::Object>;
 
-	void Client::restart() {
+	void Client::restart(void) {
 		client_.reset();
 		*this = Client();
 	}
@@ -200,7 +200,7 @@ namespace teav2 {
 		};
 	}
 
-	void Client::on_authorization_state_update() {
+	void Client::on_authorization_state_update(void) {
 		authentication_query_id_++;
 		td_api::downcast_call(
 				*authorization_state_,
@@ -285,7 +285,7 @@ namespace teav2 {
 		}
 	}
 
-	std::uint64_t Client::next_query_id() {
+	std::uint64_t Client::next_query_id(void) {
 		return ++current_query_id_;
 	}
 } // namespace teav2

@@ -25,10 +25,10 @@ int main(int argc, char *argv[]) {
     );
 
 	if (args["send"].asBool()) {
-		std::cerr << "send is not yet implemented." << std::endl;
+		std::cerr << "Non-interactive mode not implemented." << std::endl;
 		std::exit(EXIT_FAILURE);
 	}
 
-	teav2::Client client;
-	client.loop();
+	std::cerr << "Interactive mode not implemented." << std::endl;
+	std::exit(EXIT_FAILURE);
 }

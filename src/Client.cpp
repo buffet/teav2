@@ -1,10 +1,3 @@
-//
-// Copyright Aliaksei Levin (levlam@telegram.org), Arseny Smirnov (arseny30@gmail.com) 2014-2018
-//
-// Distributed under the Boost Software License, Version 1.0. (See accompanying
-// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
-//
-
 #include "Client.hpp"
 
 #include <td/telegram/Client.h>
@@ -21,29 +14,25 @@
 #include <string>
 #include <vector>
 
-// Simple single-threaded example of TDLib usage.
-// Real world programs should use separate thread for the user input.
-// Example includes user authentication, receiving updates, getting chat list and sending text messages.
-
 // overloaded
 namespace detail {
-template <class... Fs>
-struct overload;
+	template <class... Fs>
+		struct overload;
 
-template <class F>
-struct overload<F> : public F {
-  explicit overload(F f) : F(f) {
-  }
-};
-template <class F, class... Fs>
-struct overload<F, Fs...>
-    : public overload<F>
-    , overload<Fs...> {
-  overload(F f, Fs... fs) : overload<F>(f), overload<Fs...>(fs...) {
-  }
-  using overload<F>::operator();
-  using overload<Fs...>::operator();
-};
+	template <class F>
+		struct overload<F> : public F {
+			explicit overload(F f) : F(f) {
+			}
+		};
+	template <class F, class... Fs>
+		struct overload<F, Fs...>
+		: public overload<F>
+		, overload<Fs...> {
+			overload(F f, Fs... fs) : overload<F>(f), overload<Fs...>(fs...) {
+			}
+			using overload<F>::operator();
+			using overload<Fs...>::operator();
+		};
 }  // namespace detail
 
 template <class... F>

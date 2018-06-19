@@ -1,5 +1,8 @@
 #include "docopt/docopt.h"
 
+#include "Client.hpp"
+
+#include <cstdlib>
 #include <iostream>
 
 static const char USAGE[] =
@@ -20,4 +23,12 @@ int main(int argc, char *argv[]) {
         true,
         "teav2 v0.0"
     );
+
+	if (args["send"].asBool()) {
+		std::cerr << "send is not yet implemented." << std::endl;
+		std::exit(EXIT_FAILURE);
+	}
+
+	teav2::Client client;
+	client.loop();
 }

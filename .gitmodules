@@ -1,3 +1,6 @@
 [submodule "dep/td"]
 	path = dep/td
 	url = https://github.com/tdlib/td
+[submodule "dep/docopt"]
+	path = dep/docopt
+	url = https://github.com/docopt/docopt.cpp
